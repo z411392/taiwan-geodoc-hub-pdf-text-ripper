@@ -1,0 +1,44 @@
+[project]
+dependencies = [
+  "firebase_functions",
+  "injector",
+  "shortuuid",
+  "requests",
+  "pymupdf",
+  "python-dotenv",
+  "starlette",
+  "vellox",
+  "async-typer",
+  "pyppeteer",
+  "uvicorn",
+]
+description = ""
+name = "taiwan-geodoc-hub"
+requires-python = ">=3.13,<3.14"
+version = "0.1.0"
+
+[tool.uv]
+dev-dependencies = [
+  "pytest",
+  "pytest-testdox",
+  "pytest-dotenv",
+]
+
+[tool.pytest.ini_options]
+addopts = [
+  "-s",
+  "--testdox",
+]
+env_files = [
+  ".env.test",
+]
+filterwarnings = [
+  "ignore::pytest.PytestAssertRewriteWarning",
+  "ignore:builtin type SwigPyPacked has no __module__ attribute",
+  "ignore:builtin type SwigPyObject has no __module__ attribute",
+  "ignore:builtin type swigvarlink has no __module__ attribute",
+]
+pythonpath = ["./src"]
+testpaths = [
+  "./tests",
+]
